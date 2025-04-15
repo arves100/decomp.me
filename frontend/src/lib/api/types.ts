@@ -1,5 +1,3 @@
-import type { DiffResult as ObjdiffOutput } from "objdiff-wasm";
-
 export interface Page<T> {
     next: string | null;
     previous: string | null;
@@ -60,7 +58,6 @@ export interface ClaimableScratch extends Scratch {
 export type Compilation = {
     compiler_output: string;
     diff_output: DiffOutput | null;
-    objdiff_output: ObjdiffOutput | null;
     left_object: string | null; // base64 encoded
     right_object: string | null; // base64 encoded
     success: boolean;
@@ -163,6 +160,23 @@ export interface PlatformMetadata extends PlatformBase {
 export interface Platform extends PlatformBase {
     presets: Preset[];
 }
+
+export interface ScratchResult {
+    type: "scratch";
+    item: TerseScratch;
+}
+
+export interface PresetResult {
+    type: "preset";
+    item: Preset;
+}
+
+export interface UserResult {
+    type: "user";
+    item: User;
+}
+
+export type SearchResult = ScratchResult | PresetResult | UserResult;
 
 export function isAnonUser(user: User | AnonymousUser): user is AnonymousUser {
     return user.is_anonymous;

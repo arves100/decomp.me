@@ -39,7 +39,9 @@ gc_wii:
 
 n64:
   - gcc2.7.2kmc
-  - gcc2.7.2sn
+  - gcc2.7.2sn0001
+  - gcc2.7.2sn0004
+  - gcc2.7.2sn0006
   - gcc2.7.2snew
   - gcc2.8.1pm
   - gcc2.8.1sn
@@ -127,6 +129,7 @@ ps2:
   - ee-gcc2.9-991111
   - ee-gcc2.9-991111a
   - ee-gcc2.9-991111-01
+  - ee-gcc2.9-991111-01-dtls13010
   - ee-gcc2.95.2-273a
   - ee-gcc2.95.2-274
   - ee-gcc2.95.3-107
