@@ -42,6 +42,7 @@ const ICON_SOURCES = {
     "Windows 9x by Microsoft":
         "https://commons.wikimedia.org/wiki/File:Windows_Logo_(1992-2001).svg",
     "PerSPire Font by Sean Liew": "https://www.fontspace.com/sean-liew",
+	"Android by Android Open Source Project": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Android_robot_%282014-2019%29.svg/511px-Android_robot_%282014-2019%29.svg.png"
 };
 
 type Contributor =

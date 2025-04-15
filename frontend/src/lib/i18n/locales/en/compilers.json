@@ -229,6 +229,8 @@
     "bcc3.1": "Borland C i386 Compiler 3.1",
 
     "cygnus-2.7-96Q3": "cygnus-2.7-96Q3 SOA-960904",
+	
+	"ndk-r27c": "Android NDK r27c (27.2.12479018)",
 
     "armcc_opt_level": "Optimization level",
     "armcc_opt_level.-O0": "No optimization",

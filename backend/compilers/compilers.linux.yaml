@@ -208,3 +208,6 @@ win32:
   - msvc7.1
   - msvc8.0
   - msvc8.0p
+
+android:
+  - ndk-r27c

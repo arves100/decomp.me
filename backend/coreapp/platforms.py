@@ -101,6 +101,17 @@ WIN32 = Platform(
     nm_cmd="i686-w64-mingw32-nm",
 )
 
+ANDROID = Platform(
+    id="android",
+    name="Android",
+    arch="aarch64",
+    description="ARMv8-A",
+    assemble_cmd='aarch64-linux-gnu-as -o "$OUTPUT" "$PRELUDE" "$INPUT"',
+    objdump_cmd='aarch64-linux-gnu-objdump',
+    nm_cmd='aarch64-linux-gnu-nm',
+    supports_objdump_disassemble=True,
+)
+
 SWITCH = Platform(
     id="switch",
     name="Nintendo Switch",
@@ -264,5 +275,6 @@ _platforms: OrderedDict[str, Platform] = OrderedDict(
         "macosx": MACOSX,
         "msdos": MSDOS,
         "win32": WIN32,
+        "android": ANDROID,
     }
 )

@@ -18,6 +18,7 @@ import LogoSaturn from "./saturn.svg";
 import LogoSwitch from "./switch.svg";
 import UnknownIcon from "./unknown.svg";
 import LogoWin32 from "./win32.svg";
+import LogoAndroid from "./android.svg";
 
 /** In release-date order */
 const ICONS = {
@@ -36,6 +37,7 @@ const ICONS = {
     switch: LogoSwitch,
     saturn: LogoSaturn,
     dreamcast: LogoDreamcast,
+	android: LogoAndroid,
 };
 
 export const PLATFORMS = Object.keys(ICONS);

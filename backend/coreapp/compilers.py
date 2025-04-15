@@ -41,6 +41,7 @@ from coreapp.platforms import (
     DREAMCAST,
     SWITCH,
     WIN32,
+    ANDROID,
     Platform,
 )
 from django.conf import settings
@@ -136,7 +137,6 @@ class GCCPS2Compiler(GCCCompiler):
 @dataclass(frozen=True)
 class GCCSaturnCompiler(GCCCompiler):
     flags: ClassVar[Flags] = COMMON_GCC_SATURN_FLAGS
-
 
 @dataclass(frozen=True)
 class IDOCompiler(Compiler):
@@ -527,6 +527,13 @@ DREAMCAST_CC = (
 )
 
 SHC_V51R11 = SHCCompiler(id="shc-v5.1r11", platform=DREAMCAST, cc=DREAMCAST_CC)
+
+# Android
+
+NDK_R27C = ClangCompiler(
+    id="ndk-r27c", platform=ANDROID, 
+    cc='"${COMPILER_DIR}"/bin/clang++ -c --sysroot="${COMPILER_DIR}"/sysroot -fPIC $COMPILER_FLAGS "$INPUT" -o "$OUTPUT"'
+)
 
 # PS2
 IOP_GCC281 = GCCPS2Compiler(
@@ -1758,6 +1765,8 @@ _all_compilers: List[Compiler] = [
     WATCOM_110_CPP,
     # Borland, DOS
     BORLAND_31_C,
+    # Android
+    NDK_R27C,
 ]
 
 _compilers = OrderedDict({c.id: c for c in _all_compilers if c.available()})
